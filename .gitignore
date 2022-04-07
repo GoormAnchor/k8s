@@ -1,0 +1,5 @@
+*.vdi
+/cicd
+/.vagrant
+*.exe
+Vagrantfile
