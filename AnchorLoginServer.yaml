@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-server
+  labels:
+    apps: login-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: login-server
+  template:
+    metadata:
+      labels:
+        app: login-server
+    spec:
+      containers:
+      - name: login-server
+        image: sydsh19/anchor_login_server:1.0
+        ports:
+        - containerPort: 8080
