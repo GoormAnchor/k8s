@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: login-server
-        image: sydsh19/anchor_login_server:1.0
+        image: sydsh19/anchor_login_server:1.1
         ports:
         - containerPort: 8080
