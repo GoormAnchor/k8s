@@ -1,3 +1,4 @@
+USE anchor;
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (

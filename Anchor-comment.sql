@@ -1,3 +1,4 @@
+USE anchor;
 DROP TABLE IF EXISTS `comment`;
 
 CREATE TABLE `comment` (
@@ -5,8 +6,9 @@ CREATE TABLE `comment` (
 	`created_at` datetime(6) NOT NULL,
 	`content` varchar(512) NULL,
 	`user_seq` bigint NOT NULL,
-	`episode_seq` int NOT NULL,
-	`book_id` int NOT NULL
+	`episode_id` int NULL,
+	`book_id` int NOT NULL,
+	`likes` int DEFAULT 0 NOT NULL 
 );
 
 ALTER TABLE `comment` ADD CONSTRAINT `PK_COMMENT` PRIMARY KEY (
@@ -20,14 +22,14 @@ ALTER TABLE `comment` ADD CONSTRAINT `FK_user_TO_comment_1` FOREIGN KEY (
 );
 
 ALTER TABLE `comment` ADD CONSTRAINT `FK_episode_TO_comment_1` FOREIGN KEY (
-	`episode_seq`
+	`episode_id`
 ) REFERENCES `episode` (
-	`edisode_num`
+	`episode_id`
 );
 
-ALTER TABLE `comment` ADD CONSTRAINT `FK_episode_TO_comment_2` FOREIGN KEY (
+ALTER TABLE `comment` ADD CONSTRAINT `FK_book_TO_comment_1` FOREIGN KEY (
 	`book_id`
-) REFERENCES `episode` (
+) REFERENCES `book` (
 	`book_id`
 );
 
