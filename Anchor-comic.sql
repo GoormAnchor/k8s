@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS `series`;
 
 CREATE TABLE `series` (
 	`series_id`  int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`series_name`  varchar(100)  NULL
+	`series_name`  varchar(100) NULL UNIQUE
 );
 
 DROP TABLE IF EXISTS `book`;
@@ -17,7 +17,7 @@ CREATE TABLE `book` (
 	`book_image` varchar(512) NULL,
 	`isbn`   varchar(32)  NULL,
 	`author`  varchar(64)   NULL,
-	`created_at`  date  NOT NULL,
+	`created_at`  date  NULL,
 	`publisher`   varchar(64)  NULL,
 	`price`  int  NULL
 );
