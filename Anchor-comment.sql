@@ -8,9 +8,7 @@ CREATE TABLE `comment` (
 	`user_seq` bigint NOT NULL,
 	`episode_id` int NULL,
 	`book_id` int NOT NULL,
-	`likes` int DEFAULT 0 NOT NULL,
-	`series_id`  int  NOT NULL,
-	`series_num`  int  NOT NULL
+	`likes` int DEFAULT 0 NOT NULL
 );
 
 ALTER TABLE `comment` ADD CONSTRAINT `PK_COMMENT` PRIMARY KEY (
@@ -34,13 +32,6 @@ ALTER TABLE `comment` ADD CONSTRAINT `FK_book_TO_comment_1` FOREIGN KEY (
 ) REFERENCES `book` (
 	`book_id`
 );
-
-ALTER TABLE `comment` ADD CONSTRAINT `FK_book_TO_comment_2` FOREIGN KEY (
-	`series_id`
-) REFERENCES `book` (
-	`series_id`
-);
-
 
 DROP TABLE IF EXISTS `like`;
 

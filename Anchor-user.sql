@@ -2,7 +2,7 @@ USE anchor;
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-	`user_seq` bigint NOT NULL,
+	`user_seq` bigint AUTO_INCREMENT NOT NULL,
 	`created_at` datetime(6) NOT NULL,
 	`email`	varchar(512) NULL,
 	`email_verified_yn` varchar(1) NULL,
