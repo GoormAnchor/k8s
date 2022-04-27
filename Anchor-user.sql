@@ -2,7 +2,7 @@ USE anchor;
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-	`user_seq` bigint AUTO_INCREMENT NOT NULL,
+	`user_seq` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`created_at` datetime(6) NOT NULL,
 	`email`	varchar(512) NULL,
 	`email_verified_yn` varchar(1) NULL,
@@ -12,10 +12,6 @@ CREATE TABLE `user` (
 	`profile_image_url` varchar(512) NULL,
 	`role_type` varchar(20) NULL,
 	`provider_type` varchar(20) NULL
-);
-
-ALTER TABLE `user` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
-	`user_seq`
 );
 
 DROP TABLE IF EXISTS `refresh_token`;

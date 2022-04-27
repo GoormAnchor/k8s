@@ -33,26 +33,26 @@ ALTER TABLE `comment` ADD CONSTRAINT `FK_book_TO_comment_1` FOREIGN KEY (
 	`book_id`
 );
 
-DROP TABLE IF EXISTS `like`;
+DROP TABLE IF EXISTS `likes`;
 
-CREATE TABLE `like` (
+CREATE TABLE `likes` (
 	`user_seq` bigint NOT NULL,
 	`comment_id` bigint NOT NULL,
 	`created_at` datetime(6) NOT NULL
 );
 
-ALTER TABLE `like` ADD CONSTRAINT `PK_LIKE` PRIMARY KEY (
+ALTER TABLE `likes` ADD CONSTRAINT `PK_LIKE` PRIMARY KEY (
 	`user_seq`,
 	`comment_id`
 );
 
-ALTER TABLE `like` ADD CONSTRAINT `FK_user_TO_like_1` FOREIGN KEY (
+ALTER TABLE `likes` ADD CONSTRAINT `FK_user_TO_like_1` FOREIGN KEY (
 	`user_seq`
 ) REFERENCES `user` (
 	`user_seq`
 );
 
-ALTER TABLE `like` ADD CONSTRAINT `FK_comment_TO_like_1` FOREIGN KEY (
+ALTER TABLE `likes` ADD CONSTRAINT `FK_comment_TO_like_1` FOREIGN KEY (
 	`comment_id`
 ) REFERENCES `comment` (
 	`comment_id`
