@@ -7,8 +7,7 @@ CREATE TABLE `comment` (
 	`content` varchar(512) NULL,
 	`user_seq` bigint NOT NULL,
 	`episode_id` int NULL,
-	`book_id` int NOT NULL,
-	`likes` int DEFAULT 0 NOT NULL
+	`book_id` int NOT NULL
 );
 
 ALTER TABLE `comment` ADD CONSTRAINT `PK_COMMENT` PRIMARY KEY (
